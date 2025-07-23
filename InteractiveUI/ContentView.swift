@@ -9,9 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var name: String = ""
+    @State private var textTitle = "What is your name?"
     var body: some View {
         VStack {
-            Text("What is Your Name?")
+            Text(textTitle)
                 .font(.title)
                 .fontWeight(.bold)
                 .foregroundColor(Color.purple)
@@ -21,7 +22,8 @@ struct ContentView: View {
                 .font(.title)
                 .padding()
             Button("Submit Name") {
-                
+                print(name)
+                textTitle = "Welcome \(name)!"
             }
             .font(.title2)
             .buttonStyle(.borderedProminent)
